@@ -1,0 +1,68 @@
+This is a flow-chart drawing GUI developed for Prof.R.S.Sreenivas' PetriSim Project
+
+Installation:
+
+No specific installation procedures required.  Decompress the folder to the directory as user specified. 
+After decompressing, double click on the executable file in /dist folder to launch the GUI
+
+
+User Instructions:
+
+Things are fairly straightforward.
+- To create a place, click on the "place" button on left panel.  Your cursor should turn to 
+a hand shaped object, and move the mouse to the canvas area.  Left click in the area you want to
+create the place, then type in a name for it, click enter.
+
+- To create a transition, click on the "transition" button on left panel. Similar as the operation
+for creating place. In the dialog window type the name of the transition followed by spce " " and
+binary number "1" or "0", e.g. "t1 0" or "t1 1". Different colors differentiate 0-transitions and
+1-transitions.
+
+    * For Polygon Primitive on the primitive panel, you can do the same operation but do not need
+	to provide the name. The Polygon is designed as control point(s) for arrows in the complicated
+	flow chart drawing, e.g., when you want draw transitions (sinks) back to the original places(sources)
+
+- To create a arrow, left click on the "arrow" button under primitives panel on left.  Then right click on the 
+source primitive, and right click on the destination primitive. A dialog window would pomp up to 
+ask the weight bound associates with the arrow.
+    * When in the Arrow mode, user can click and hold on to drag the primitives to any places on canvas,
+   	the flow chart would adjust accordingly.
+
+- To create a different work area, click on "New work area" button on the top of canvas.
+
+- To delete primitives click on "Edit/Move" button, and then right click on the primitive of you want to delete.
+Choose the option of delete. The primitive shape and all the connected arrows would be deleted.
+
+- To compile and output the in/out matrix text file, click on "Compile" button to specify the directory and file-name.
+	The format of the output text file:
+		1.First number in first row is # of places in the  flow chart. Second number is the # of transitions.
+		2.In matrix. From Places to Transitions.
+		3.Out matrix. From Transitions to Places
+		4.Last line is the type of transitions (0 or 1). Ordered lexicographically.
+        * After compilation, a new tab "I/O matrices" would be created to show the same information     
+	  as in the output textfile with clear labeling 
+
+- To run some engine on the compiled in/out matrix text files, click on "Run".  You will then need to specify 
+3 files:
+	1  The analyzer executable, 
+	2  The input in/out matrix text file, 
+	3. And the name of output text file.  
+Program will prompt you three dialog windows for all 3 of these files respectively.
+
+
+- To create sub graph under each transition, click on Edit/Move button on the left operation panel, move mouse to the
+target transition, right click and choose the "new window" option. A new window would be created with two transition
+(in and out transitions) fixed in the new window. All the operations on the new sub-window would be identical as the 
+above context. So you can generate multi-layed in/out matrices.
+
+
+
+- Find the scale adjustment scroller on the toolbar, this can be used to adjust the zoom scale of 
+each individual work area.
+
+##################################
+Save and Load functions are implemented:
+To save a drawed graph, click on the "save" icon, on the top left window, the graph would be saved in a 
+*.draw file
+
+To reload the saved graph, click on the "Load" icon, on the top left window, the graph saved would be reloaded. 
